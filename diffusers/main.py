@@ -1,3 +1,18 @@
+import os
+new_path = os.getcwd(f"diffusers")
+
+print(f"current path {os.getcwd()}")
+print(f"to change to path {new_path}")
+os.chdir(new_path)
+print(f"current path {os.getcwd()}")
+
+import sys
+import subprocess
+
+# implement pip as a subprocess:
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'.'])
+
 import streamlit as st
 from diffusers import StableDiffusionPipeline
 import torch

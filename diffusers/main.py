@@ -3,7 +3,10 @@ new_path = os.getcwd()
 
 print(f"current path {os.getcwd()}")
 print(f"to change to path {new_path}")
-os.chdir(f"{new_path}/diffusers")
+
+if "diffusers" not in new_path:
+    os.chdir(f"{new_path}/diffusers")
+
 print(f"current path {os.getcwd()}")
 
 import sys

@@ -24,7 +24,7 @@ st.header('stable diffusion generating xrays')
 
 with st.form("my_form"):
     sel_col, _  =st.columns(2)
-    prompt_label = sel_col.selectbox("Pick an input prompt", options=["normal", "bacteria"])
+    prompt_label = sel_col.selectbox("Pick an input prompt", options=["normal", "bacteria", "virus"])
 
     guidance_scale = sel_col.slider("What is the gudiance", min_value=4, max_value=20)
 
@@ -36,7 +36,6 @@ with st.form("my_form"):
 
     submitted = st.form_submit_button("Submit")
 
-    image = pipe(prompt_label, num_inference_steps=30, guidance_scale=guidance_scale).images[0]
-
     if submitted:
-       st.image(image)
+        image = pipe(prompt_label, num_inference_steps=30, guidance_scale=guidance_scale).images[0]
+        st.image(image)

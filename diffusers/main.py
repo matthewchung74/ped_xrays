@@ -29,9 +29,7 @@ with st.form("my_form"):
     guidance_scale = sel_col.slider("What is the gudiance", min_value=4, max_value=20)
 
     model_name= "stabilityai/stable-diffusion-2"
-    model_path = f"{Path.cwd()}/ped-xray-model-lora"
-    st.write(model_path)
-    
+    model_path = f"{Path.cwd()}/ped-xray-model-lora"    
 
     pipe = StableDiffusionPipeline.from_pretrained(model_name, torch_dtype=torch.float32)
     pipe.unet.load_attn_procs(model_path)

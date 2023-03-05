@@ -6,7 +6,7 @@ datasets==2.10.1
 diffusion==6.9.0
 einops==0.6.0
 flax==0.6.6
-gym==0.26.2
+gym<0.25.0
 huggingface_hub==0.12.1
 importlib_metadata==6.0.0
 intel_extension_for_pytorch==1.13.100

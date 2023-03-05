@@ -1,5 +1,10 @@
 import os
-os.getcwd(f"{os.getcwd()}/diffusers")
+new_path = os.getcwd(f"diffusers")
+
+print(f"current path {os.getcwd()}")
+print(f"to change to path {new_path}")
+os.chdir(new_path)
+print(f"current path {os.getcwd()}")
 
 import sys
 import subprocess

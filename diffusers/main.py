@@ -42,6 +42,11 @@ with st.form("my_form"):
 
     if submitted:
         st.subheader("submitted")
-        image = pipe(prompt_label, num_inference_steps=30, guidance_scale=guidance_scale).images[0]
-        st.subheader("after pipe")
-        st.image(image)
+
+        try:
+            image = pipe(prompt_label, num_inference_steps=30, guidance_scale=guidance_scale).images[0]
+            st.subheader("after pipe")
+            st.image(image)        
+        except Exception as e: 
+            st.error(e)
+

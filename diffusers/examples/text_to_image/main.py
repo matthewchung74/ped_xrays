@@ -1,15 +1,16 @@
+import os
+os.getcwd(f"{os.getcwd()}/diffusers")
+
 import streamlit as st
 from diffusers import StableDiffusionPipeline
 import torch
 from pathlib import Path
 from tqdm import tqdm
-import os
 tqdm(disable=True, total=0)
 
 st.header('stable diffusion generating xrays')
 
 with st.form("my_form"):
-    os.getcwd(f"{os.getcwd()}/diffusers")
     sel_col, _  =st.columns(2)
     prompt_label = sel_col.selectbox("Pick an input prompt", options=["normal", "bacteria"])
 

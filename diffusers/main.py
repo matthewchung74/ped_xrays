@@ -1,9 +1,9 @@
 import os
-new_path = os.getcwd(f"diffusers")
+new_path = os.getcwd(f)
 
 print(f"current path {os.getcwd()}")
 print(f"to change to path {new_path}")
-os.chdir(new_path)
+os.chdir(f"{new_path}/diffusers")
 print(f"current path {os.getcwd()}")
 
 import sys

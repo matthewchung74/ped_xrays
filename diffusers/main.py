@@ -36,12 +36,12 @@ with st.form("my_form"):
     prompt_label = sel_col.selectbox("Pick an input prompt", options=["normal", "bacteria", "virus"])
     guidance_scale = sel_col.slider("What is the gudiance", min_value=4, max_value=20)
 
-    st.header("before submit")
+    st.subheader("before submit")
     submitted = st.form_submit_button("Submit")
-    st.header("after submit")
+    st.subheader("after submit")
 
     if submitted:
-        st.header("submitted")
+        st.subheader("submitted")
         image = pipe(prompt_label, num_inference_steps=30, guidance_scale=guidance_scale).images[0]
-        st.header("after pipe")
+        st.subheader("after pipe")
         st.image(image)

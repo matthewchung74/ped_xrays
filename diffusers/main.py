@@ -1,5 +1,5 @@
 import os
-new_path = os.getcwd(f)
+new_path = os.getcwd()
 
 print(f"current path {os.getcwd()}")
 print(f"to change to path {new_path}")

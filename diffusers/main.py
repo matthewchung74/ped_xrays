@@ -36,9 +36,12 @@ with st.form("my_form"):
 
     pipe = StableDiffusionPipeline.from_pretrained(model_name, torch_dtype=torch.float32)
     pipe.unet.load_attn_procs(model_path)
-
+    st.header("before submit")
     submitted = st.form_submit_button("Submit")
+    st.header("after submit")
 
     if submitted:
+        st.header("submitted")
         image = pipe(prompt_label, num_inference_steps=30, guidance_scale=guidance_scale).images[0]
+        st.header("after pipe")
         st.image(image)

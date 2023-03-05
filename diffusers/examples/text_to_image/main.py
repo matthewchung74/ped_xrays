@@ -1,6 +1,13 @@
 import os
 os.getcwd(f"{os.getcwd()}/diffusers")
 
+import sys
+import subprocess
+
+# implement pip as a subprocess:
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'.'])
+
 import streamlit as st
 from diffusers import StableDiffusionPipeline
 import torch

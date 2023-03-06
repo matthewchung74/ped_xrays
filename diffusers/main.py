@@ -45,9 +45,11 @@ with st.form("my_form"):
         print("submitted")
 
         try:
+            print("before pipe")
             image = pipe(prompt_label, num_inference_steps=30, guidance_scale=guidance_scale).images[0]
             print("after pipe")
             st.image(image)        
+            print("after image")
         except Exception as e: 
             print("Unexpected error:", sys.exc_info()[0])
 

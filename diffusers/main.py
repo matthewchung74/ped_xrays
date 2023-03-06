@@ -52,4 +52,6 @@ with st.form("my_form"):
             print("after image")
         except: 
             print("Unexpected error:", sys.exc_info()[0])
+        finally:
+            print('in finally block')
 

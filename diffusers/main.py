@@ -36,17 +36,17 @@ with st.form("my_form"):
     prompt_label = sel_col.selectbox("Pick an input prompt", options=["normal", "bacteria", "virus"])
     guidance_scale = sel_col.slider("What is the gudiance", min_value=4, max_value=20)
 
-    st.subheader("before submit")
+    print("before submit")
     submitted = st.form_submit_button("Submit")
-    st.subheader("after submit")
+    print("after submit")
 
     if submitted:
-        st.subheader("submitted")
+        print("submitted")
 
         try:
             image = pipe(prompt_label, num_inference_steps=30, guidance_scale=guidance_scale).images[0]
-            st.subheader("after pipe")
+            print("after pipe")
             st.image(image)        
         except Exception as e: 
-            st.error(e)
+            print(e)
 

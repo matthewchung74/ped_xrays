@@ -1,4 +1,6 @@
 import os
+import sys
+import subprocess
 new_path = os.getcwd()
 
 print(f"current path {os.getcwd()}")
@@ -12,8 +14,7 @@ if "diffusers" not in new_path:
 
 print(f"current path {os.getcwd()}")
 
-import sys
-import subprocess
+
 
 
 import streamlit as st

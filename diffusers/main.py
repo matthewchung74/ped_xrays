@@ -6,15 +6,15 @@ print(f"to change to path {new_path}")
 
 if "diffusers" not in new_path:
     os.chdir(f"{new_path}/diffusers")
+    # implement pip as a subprocess:
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+    '.'])
 
 print(f"current path {os.getcwd()}")
 
 import sys
 import subprocess
 
-# implement pip as a subprocess:
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
-'.'])
 
 import streamlit as st
 from diffusers import StableDiffusionPipeline

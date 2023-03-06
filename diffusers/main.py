@@ -50,6 +50,6 @@ with st.form("my_form"):
             print("after pipe")
             st.image(image)        
             print("after image")
-        except Exception as e: 
+        except: 
             print("Unexpected error:", sys.exc_info()[0])
 

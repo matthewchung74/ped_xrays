@@ -24,7 +24,7 @@ export dataset_name="../../../data/dataset/"
   --dataset_name=$dataset_name --caption_column="text" \
   --resolution=768 \
   --train_batch_size=2 \
-  --num_train_epochs=100 --checkpointing_steps=5000 \
+  --num_train_epochs=150 --checkpointing_steps=5000 \
   --learning_rate=1e-04 --lr_scheduler="constant" --lr_warmup_steps=0 \
   --seed=42 \
   --output_dir="ped-xray-model-lora" \
